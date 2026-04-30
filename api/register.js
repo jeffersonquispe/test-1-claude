@@ -43,7 +43,9 @@ module.exports = async function handler(req, res) {
 
     if (!upstream.ok) {
       const err = await upstream.json().catch(() => ({}));
-      return res.status(502).json({ error: err.message ?? 'Database error' });
+      // TEMP DEBUG — remove after fixing 401
+      const keyInfo = `len=${supabaseKey.length} start=${supabaseKey.slice(0,8)} end=${supabaseKey.slice(-4)}`;
+      return res.status(502).json({ error: err.message ?? 'Database error', supabaseStatus: upstream.status, keyInfo });
     }
 
     const [record] = await upstream.json();
