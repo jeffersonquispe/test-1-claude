@@ -1,5 +1,4 @@
-export default async function handler(req, res) {
-  // CORS headers — required on every response
+module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -12,7 +11,14 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, phone, workshop } = req.body ?? {};
+  // Parse body explicitly — req.body may be undefined in plain Vercel Node functions
+  let body = req.body;
+  if (typeof body === 'string') {
+    try { body = JSON.parse(body); } catch { body = {}; }
+  }
+  body = body ?? {};
+
+  const { name, email, phone, workshop } = body;
 
   if (!name || !email || !workshop) {
     return res.status(400).json({ error: 'name, email and workshop are required' });
@@ -43,4 +49,4 @@ export default async function handler(req, res) {
 
   const [record] = await response.json();
   return res.status(200).json({ success: true, id: record.id });
-}
+};
