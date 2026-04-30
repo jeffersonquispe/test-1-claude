@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA Academy — Talleres de Inteligencia Artificial</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dark': { 900: '#050914', 800: '#0a0f1d', 700: '#0f1629' },
+            'brand': { 500: '#0052FF', 400: '#3374FF', 600: '#0040CC' },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass {
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .chevron { transform: rotate(180deg); }
+  </style>
+</head>
+<body class="bg-dark-900 text-white min-h-screen">
+
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 bg-dark-900/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2 font-bold text-lg">
+        <i data-lucide="brain" class="w-6 h-6 text-brand-500"></i>
+        <span>IA <span class="text-brand-500">Academy</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm text-white/70">
+        <a href="#benefits" class="hover:text-white transition-colors">Beneficios</a>
+        <a href="#courses" class="hover:text-white transition-colors">Talleres</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+      </div>
+      <a href="#register" class="bg-brand-500 hover:bg-brand-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors">
+        Inscribirme
+      </a>
+    </div>
+  </nav>
+
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <!-- Blob decorativo -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none" style="background:rgba(0,82,255,0.12);filter:blur(120px)"></div>
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <span class="inline-flex items-center gap-2 bg-brand-500/10 border border-brand-500/30 text-brand-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-8">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse"></span>
+        Nuevo · Talleres 2025
+      </span>
+      <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
+        Domina la
+        <span class="bg-gradient-to-r from-brand-400 to-brand-500 bg-clip-text text-transparent"> Inteligencia<br>Artificial</span>
+        desde cero
+      </h1>
+      <p class="text-white/60 text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        Talleres 100% prácticos con proyectos reales. Aprende a construir agentes, automatizaciones y productos con IA en semanas, no meses.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#register" class="bg-brand-500 hover:bg-brand-600 text-white font-bold px-8 py-4 rounded-xl transition-colors text-lg">
+          Reservar mi lugar
+        </a>
+        <a href="#courses" class="border border-white/20 hover:border-white/40 text-white font-semibold px-8 py-4 rounded-xl transition-colors text-lg">
+          Ver talleres
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="benefits" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-black mb-4">¿Por qué <span class="text-brand-500">IA Academy</span>?</h2>
+        <p class="text-white/50 text-lg max-w-xl mx-auto">Todo lo que necesitas para convertirte en un profesional de la IA</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="glass border border-white/5 rounded-2xl p-8">
+          <i data-lucide="zap" class="w-10 h-10 text-brand-500 mb-4"></i>
+          <h3 class="text-xl font-bold mb-2">100% Práctico</h3>
+          <p class="text-white/50 text-sm leading-relaxed">Cada taller incluye proyectos reales que puedes agregar a tu portafolio desde el primer día.</p>
+        </div>
+        <div class="glass border border-white/5 rounded-2xl p-8">
+          <i data-lucide="users" class="w-10 h-10 text-brand-500 mb-4"></i>
+          <h3 class="text-xl font-bold mb-2">Grupos reducidos</h3>
+          <p class="text-white/50 text-sm leading-relaxed">Máximo 15 personas por cohorte para garantizar atención personalizada e interacción directa.</p>
+        </div>
+        <div class="glass border border-white/5 rounded-2xl p-8">
+          <i data-lucide="trending-up" class="w-10 h-10 text-brand-500 mb-4"></i>
+          <h3 class="text-xl font-bold mb-2">Stack actual</h3>
+          <p class="text-white/50 text-sm leading-relaxed">Trabajamos con las herramientas que el mercado usa hoy: Claude, GPT-4, n8n, Python, LangChain.</p>
+        </div>
+        <div class="glass border border-white/5 rounded-2xl p-8">
+          <i data-lucide="award" class="w-10 h-10 text-brand-500 mb-4"></i>
+          <h3 class="text-xl font-bold mb-2">Certificado incluido</h3>
+          <p class="text-white/50 text-sm leading-relaxed">Obtén tu certificado de finalización al completar el proyecto final de cada taller.</p>
+        </div>
+        <div class="glass border border-white/5 rounded-2xl p-8">
+          <i data-lucide="clock" class="w-10 h-10 text-brand-500 mb-4"></i>
+          <h3 class="text-xl font-bold mb-2">Horarios flexibles</h3>
+          <p class="text-white/50 text-sm leading-relaxed">Sesiones en vivo grabadas. Revísalas cuando quieras durante 6 meses después del taller.</p>
+        </div>
+        <div class="glass border border-white/5 rounded-2xl p-8">
+          <i data-lucide="message-circle" class="w-10 h-10 text-brand-500 mb-4"></i>
+          <h3 class="text-xl font-bold mb-2">Comunidad activa</h3>
+          <p class="text-white/50 text-sm leading-relaxed">Acceso a Discord exclusivo con todos los graduados, mentores y recursos actualizados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="courses" class="py-24 px-6 bg-dark-800">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-black mb-4">Nuestros <span class="text-brand-500">Talleres</span></h2>
+        <p class="text-white/50 text-lg max-w-xl mx-auto">Elige el taller que más se adapta a tus objetivos y nivel actual</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- WORKSHOP CARDS -->
+        <!-- claudeLLMs -->
+        <div class="bg-white rounded-[24px] shadow-2xl p-8 flex flex-col gap-4">
+          <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-blue-600/80 to-indigo-900 flex items-center justify-center">
+            <!-- Replace with: <img src="assets/img/claudeLLMs.jpg" alt="Claude & LLMs" class="w-full h-48 object-cover rounded-2xl"> -->
+            <i data-lucide="bot" class="w-16 h-16 text-white/40"></i>
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-widest text-brand-500">Fundamentos · IA Generativa</span>
+          <h3 class="text-xl font-bold text-dark-900">Claude &amp; LLMs</h3>
+          <p class="text-dark-700 text-sm flex-1">Comprende cómo funcionan los grandes modelos de lenguaje y aprende a integrar Claude en tus propios proyectos con la API de Anthropic.</p>
+          <div class="flex items-center gap-2 text-sm text-dark-700">
+            <i data-lucide="clock" class="w-4 h-4 text-brand-500"></i> 10h
+          </div>
+          <button onclick="openSyllabus('claudeLLMs')"
+            class="mt-auto bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3 rounded-xl transition-colors">
+            Ver programa
+          </button>
+        </div>
+        <!-- pythonIA -->
+        <div class="bg-white rounded-[24px] shadow-2xl p-8 flex flex-col gap-4">
+          <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-yellow-400/80 to-orange-600 flex items-center justify-center">
+            <!-- Replace with: <img src="assets/img/pythonIA.jpg" alt="Python para IA" class="w-full h-48 object-cover rounded-2xl"> -->
+            <i data-lucide="code-2" class="w-16 h-16 text-white/40"></i>
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-widest text-brand-500">Programación · IA Aplicada</span>
+          <h3 class="text-xl font-bold text-dark-900">Python para IA</h3>
+          <p class="text-dark-700 text-sm flex-1">Desde los fundamentos de Python hasta el uso de librerías clave como OpenAI SDK, LangChain y Pandas para construir pipelines de IA robustos.</p>
+          <div class="flex items-center gap-2 text-sm text-dark-700">
+            <i data-lucide="clock" class="w-4 h-4 text-brand-500"></i> 16h
+          </div>
+          <button onclick="openSyllabus('pythonIA')"
+            class="mt-auto bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3 rounded-xl transition-colors">
+            Ver programa
+          </button>
+        </div>
+        <!-- agentesN8n -->
+        <div class="bg-white rounded-[24px] shadow-2xl p-8 flex flex-col gap-4">
+          <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-violet-500/80 to-purple-900 flex items-center justify-center">
+            <!-- Replace with: <img src="assets/img/agentesN8n.jpg" alt="Agentes con n8n" class="w-full h-48 object-cover rounded-2xl"> -->
+            <i data-lucide="workflow" class="w-16 h-16 text-white/40"></i>
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-widest text-brand-500">Automatización · Agentes</span>
+          <h3 class="text-xl font-bold text-dark-900">Agentes con n8n</h3>
+          <p class="text-dark-700 text-sm flex-1">Construye agentes de IA capaces de navegar la web, leer emails y ejecutar tareas complejas en piloto automático usando n8n y modelos LLM.</p>
+          <div class="flex items-center gap-2 text-sm text-dark-700">
+            <i data-lucide="clock" class="w-4 h-4 text-brand-500"></i> 12h
+          </div>
+          <button onclick="openSyllabus('agentesN8n')"
+            class="mt-auto bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3 rounded-xl transition-colors">
+            Ver programa
+          </button>
+        </div>
+        <!-- promptEngineering -->
+        <div class="bg-white rounded-[24px] shadow-2xl p-8 flex flex-col gap-4">
+          <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-emerald-400/80 to-teal-700 flex items-center justify-center">
+            <!-- Replace with: <img src="assets/img/promptEngineering.jpg" alt="Prompt Engineering" class="w-full h-48 object-cover rounded-2xl"> -->
+            <i data-lucide="message-square" class="w-16 h-16 text-white/40"></i>
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-widest text-brand-500">Habilidad clave · Sin código</span>
+          <h3 class="text-xl font-bold text-dark-900">Prompt Engineering</h3>
+          <p class="text-dark-700 text-sm flex-1">Domina el arte de comunicarte con los modelos de IA para obtener resultados de nivel profesional: estructuras, cadenas de razonamiento y evaluación.</p>
+          <div class="flex items-center gap-2 text-sm text-dark-700">
+            <i data-lucide="clock" class="w-4 h-4 text-brand-500"></i> 8h
+          </div>
+          <button onclick="openSyllabus('promptEngineering')"
+            class="mt-auto bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3 rounded-xl transition-colors">
+            Ver programa
+          </button>
+        </div>
+        <!-- iaNegocios -->
+        <div class="bg-white rounded-[24px] shadow-2xl p-8 flex flex-col gap-4">
+          <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-rose-500/80 to-pink-900 flex items-center justify-center">
+            <!-- Replace with: <img src="assets/img/iaNegocios.jpg" alt="IA para Negocios" class="w-full h-48 object-cover rounded-2xl"> -->
+            <i data-lucide="bar-chart-3" class="w-16 h-16 text-white/40"></i>
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-widest text-brand-500">Estrategia · Sin código</span>
+          <h3 class="text-xl font-bold text-dark-900">IA para Negocios</h3>
+          <p class="text-dark-700 text-sm flex-1">Identifica oportunidades de IA en tu empresa, evalúa herramientas, calcula ROI y lidera proyectos de transformación digital sin necesitar ser técnico.</p>
+          <div class="flex items-center gap-2 text-sm text-dark-700">
+            <i data-lucide="clock" class="w-4 h-4 text-brand-500"></i> 8h
+          </div>
+          <button onclick="openSyllabus('iaNegocios')"
+            class="mt-auto bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3 rounded-xl transition-colors">
+            Ver programa
+          </button>
+        </div>
+        <!-- computerVision -->
+        <div class="bg-white rounded-[24px] shadow-2xl p-8 flex flex-col gap-4">
+          <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-cyan-400/80 to-sky-800 flex items-center justify-center">
+            <!-- Replace with: <img src="assets/img/computerVision.jpg" alt="Computer Vision" class="w-full h-48 object-cover rounded-2xl"> -->
+            <i data-lucide="eye" class="w-16 h-16 text-white/40"></i>
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-widest text-brand-500">Visión por computadora</span>
+          <h3 class="text-xl font-bold text-dark-900">Computer Vision</h3>
+          <p class="text-dark-700 text-sm flex-1">Construye modelos que detectan objetos, clasifican imágenes y procesan video en tiempo real usando Python, OpenCV y modelos multimodales.</p>
+          <div class="flex items-center gap-2 text-sm text-dark-700">
+            <i data-lucide="clock" class="w-4 h-4 text-brand-500"></i> 14h
+          </div>
+          <button onclick="openSyllabus('computerVision')"
+            class="mt-auto bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3 rounded-xl transition-colors">
+            Ver programa
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="py-24 px-6">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-black mb-4">Preguntas <span class="text-brand-500">frecuentes</span></h2>
+        <p class="text-white/50 text-lg">Todo lo que necesitas saber antes de inscribirte</p>
+      </div>
+      <div class="space-y-3">
+        <details class="glass border border-white/5 rounded-2xl overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-white">
+            ¿Necesito experiencia previa en programación?
+            <i data-lucide="chevron-down" class="chevron w-5 h-5 text-brand-500 transition-transform flex-shrink-0 ml-4"></i>
+          </summary>
+          <div class="px-6 pb-6 text-white/60 text-sm leading-relaxed">
+            Depende del taller. Talleres como "IA para Negocios" y "Prompt Engineering" no requieren programación. Para "Python para IA" o "Computer Vision" es útil tener nociones básicas. Cada descripción indica los requisitos exactos.
+          </div>
+        </details>
+        <details class="glass border border-white/5 rounded-2xl overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-white">
+            ¿Las clases son en vivo o grabadas?
+            <i data-lucide="chevron-down" class="chevron w-5 h-5 text-brand-500 transition-transform flex-shrink-0 ml-4"></i>
+          </summary>
+          <div class="px-6 pb-6 text-white/60 text-sm leading-relaxed">
+            Las sesiones son en vivo vía Zoom para mayor interacción. Todas quedan grabadas y disponibles por 6 meses, por si no puedes asistir a alguna en tiempo real.
+          </div>
+        </details>
+        <details class="glass border border-white/5 rounded-2xl overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-white">
+            ¿Cuánto dura cada taller?
+            <i data-lucide="chevron-down" class="chevron w-5 h-5 text-brand-500 transition-transform flex-shrink-0 ml-4"></i>
+          </summary>
+          <div class="px-6 pb-6 text-white/60 text-sm leading-relaxed">
+            Entre 8 y 16 horas según el taller, distribuidas en sesiones de 2-3 horas. Puedes ver la duración exacta en cada card. El ritmo está pensado para que puedas combinarlo con trabajo o estudios.
+          </div>
+        </details>
+        <details class="glass border border-white/5 rounded-2xl overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-white">
+            ¿Qué herramientas necesito tener instaladas?
+            <i data-lucide="chevron-down" class="chevron w-5 h-5 text-brand-500 transition-transform flex-shrink-0 ml-4"></i>
+          </summary>
+          <div class="px-6 pb-6 text-white/60 text-sm leading-relaxed">
+            Solo necesitas una computadora con conexión a internet. Las herramientas varían por taller, pero siempre te enviamos una guía de instalación 48 horas antes del inicio. Muchas corremos en la nube directamente.
+          </div>
+        </details>
+        <details class="glass border border-white/5 rounded-2xl overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-white">
+            ¿Entregan certificado al finalizar?
+            <i data-lucide="chevron-down" class="chevron w-5 h-5 text-brand-500 transition-transform flex-shrink-0 ml-4"></i>
+          </summary>
+          <div class="px-6 pb-6 text-white/60 text-sm leading-relaxed">
+            Sí. Al entregar el proyecto final recibes un certificado digital de IA Academy verificable en línea. Puedes compartirlo en LinkedIn o tu CV.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="register" class="py-24 px-6 bg-dark-800">
+    <div class="max-w-lg mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-black mb-4">Reserva tu <span class="text-brand-500">lugar</span></h2>
+        <p class="text-white/50 text-lg">Cupos limitados — completa el formulario y te contactamos en 24h</p>
+      </div>
+      <form id="register-form" class="glass border border-white/5 rounded-[24px] p-8 space-y-5">
+        <div>
+          <label class="block text-sm font-medium text-white/70 mb-2">Nombre completo</label>
+          <input type="text" name="name" required placeholder="Tu nombre"
+            class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-brand-500 transition-colors">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-white/70 mb-2">Email</label>
+          <input type="email" name="email" required placeholder="tu@email.com"
+            class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-brand-500 transition-colors">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-white/70 mb-2">Teléfono / WhatsApp</label>
+          <input type="tel" name="phone" placeholder="+51 999 999 999"
+            class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-brand-500 transition-colors">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-white/70 mb-2">Taller de interés</label>
+          <select name="workshop" required
+            class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors">
+            <option value="" disabled selected class="text-white/30">Selecciona un taller</option>
+            <option value="claudeLLMs">Claude &amp; LLMs</option>
+            <option value="pythonIA">Python para IA</option>
+            <option value="agentesN8n">Agentes con n8n</option>
+            <option value="promptEngineering">Prompt Engineering</option>
+            <option value="iaNegocios">IA para Negocios</option>
+            <option value="computerVision">Computer Vision</option>
+          </select>
+        </div>
+        <button type="submit"
+          class="w-full bg-brand-500 hover:bg-brand-600 text-white font-bold py-4 rounded-xl transition-colors text-lg">
+          Reservar mi lugar
+        </button>
+        <div id="form-msg" class="hidden text-center text-sm py-3 rounded-xl"></div>
+      </form>
+    </div>
+    <script>
+      document.getElementById('register-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button[type="submit"]');
+        const msg = document.getElementById('form-msg');
+        const data = Object.fromEntries(new FormData(this));
+        btn.disabled = true;
+        btn.textContent = 'Enviando...';
+        try {
+          const res = await fetch('/api/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          const json = await res.json();
+          if (res.ok) {
+            msg.textContent = '¡Listo! Te contactaremos en menos de 24 horas.';
+            msg.className = 'text-center text-sm py-3 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20';
+            this.reset();
+          } else {
+            throw new Error(json.error || 'Error desconocido');
+          }
+        } catch (err) {
+          msg.textContent = 'Ocurrió un error. Intenta de nuevo o escríbenos directamente.';
+          msg.className = 'text-center text-sm py-3 rounded-xl bg-red-500/10 text-red-400 border border-red-500/20';
+          btn.disabled = false;
+          btn.textContent = 'Reservar mi lugar';
+        }
+        msg.classList.remove('hidden');
+      });
+    </script>
+  </section>
+
+  <footer id="footer" class="bg-dark-900 border-t border-white/5 py-12 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 mb-10">
+        <div class="text-center md:text-left">
+          <div class="flex items-center gap-2 font-bold text-lg mb-2 justify-center md:justify-start">
+            <i data-lucide="brain" class="w-6 h-6 text-brand-500"></i>
+            <span>IA <span class="text-brand-500">Academy</span></span>
+          </div>
+          <p class="text-white/40 text-sm max-w-xs">Formando a los profesionales de IA que las empresas buscan hoy.</p>
+        </div>
+        <div class="flex gap-8 text-sm text-white/50">
+          <div class="flex flex-col gap-3">
+            <a href="#benefits" class="hover:text-white transition-colors">Beneficios</a>
+            <a href="#courses" class="hover:text-white transition-colors">Talleres</a>
+            <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+            <a href="#register" class="hover:text-white transition-colors">Inscripción</a>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <a href="#" class="text-white/40 hover:text-brand-500 transition-colors" aria-label="LinkedIn">
+            <i data-lucide="linkedin" class="w-5 h-5"></i>
+          </a>
+          <a href="#" class="text-white/40 hover:text-brand-500 transition-colors" aria-label="Instagram">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </a>
+          <a href="#" class="text-white/40 hover:text-brand-500 transition-colors" aria-label="YouTube">
+            <i data-lucide="youtube" class="w-5 h-5"></i>
+          </a>
+          <a href="#" class="text-white/40 hover:text-brand-500 transition-colors" aria-label="Twitter">
+            <i data-lucide="twitter" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-white/5 pt-6 text-center text-white/30 text-xs">
+        © 2025 IA Academy. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Syllabus -->
+  <div id="modal-overlay" class="fixed inset-0 z-50 hidden items-center justify-center p-4" style="background:rgba(5,9,20,0.85)">
+    <div class="glass border border-white/5 rounded-[24px] w-full max-w-lg max-h-[90vh] overflow-y-auto p-8">
+      <div class="flex items-start justify-between mb-6">
+        <h2 id="modal-title" class="text-2xl font-bold text-white"></h2>
+        <button onclick="closeSyllabus()" class="text-white/40 hover:text-white transition-colors ml-4 flex-shrink-0">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <p id="modal-sumilla" class="text-white/60 text-sm leading-relaxed mb-6"></p>
+      <div class="mb-6">
+        <h3 class="text-xs font-semibold uppercase tracking-widest text-brand-500 mb-3">Al finalizar podrás</h3>
+        <p id="modal-resultado" class="text-white/70 text-sm leading-relaxed"></p>
+      </div>
+      <div class="mb-6">
+        <h3 class="text-xs font-semibold uppercase tracking-widest text-brand-500 mb-3">Proyectos hands-on</h3>
+        <ul id="modal-handson" class="space-y-2"></ul>
+      </div>
+      <div class="flex gap-6 text-sm text-white/50">
+        <span><span class="text-white/80 font-medium">Requisitos:</span> <span id="modal-requisitos"></span></span>
+        <span><i data-lucide="clock" class="w-4 h-4 inline mr-1"></i><span id="modal-horas"></span>h</span>
+      </div>
+      <button onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'}); closeSyllabus();"
+        class="mt-8 w-full bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 rounded-xl transition-colors">
+        Inscribirme ahora
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // ── Syllabus Data ──────────────────────────────────────────────
+    const syllabusData = {
+      claudeLLMs: {
+        title: 'Claude & LLMs',
+        sumilla: 'Taller intensivo sobre grandes modelos de lenguaje: arquitectura transformer, tokens, embeddings y el ecosistema de IA generativa actual. Aprenderás a consumir la API de Anthropic para construir aplicaciones reales.',
+        resultado: 'Podrás integrar Claude en cualquier proyecto usando la API de Anthropic, diseñar prompts eficientes y entender las diferencias entre modelos para elegir el correcto según el caso de uso.',
+        handsOn: [
+          'Chatbot con memoria de contexto usando la API de Claude',
+          'Pipeline de resumen automático de documentos PDF',
+          'Sistema de clasificación de tickets de soporte con Claude'
+        ],
+        requisitos: 'Nociones básicas de programación (cualquier lenguaje).',
+        horas: 10
+      },
+      pythonIA: {
+        title: 'Python para IA',
+        sumilla: 'Curso práctico de Python orientado 100% a IA: entorno virtual, Jupyter, NumPy, Pandas, OpenAI SDK y LangChain. Cada sesión termina con un proyecto funcional que integra un LLM.',
+        resultado: 'Podrás escribir scripts Python para automatizar tareas con IA, construir cadenas LLM con LangChain y manipular datos con Pandas para alimentar modelos de forma eficiente.',
+        handsOn: [
+          'Scraper + resumen automático de noticias con GPT-4',
+          'Analizador de sentimientos de reseñas de productos',
+          'Agente RAG que responde preguntas sobre tus propios documentos'
+        ],
+        requisitos: 'Lógica de programación básica. No se requiere Python previo.',
+        horas: 16
+      },
+      agentesN8n: {
+        title: 'Agentes con n8n',
+        sumilla: 'Construye agentes de IA usando n8n como orquestador visual. Aprende a conectar LLMs con APIs externas, bases de datos y servicios como Gmail, Notion y Slack para crear flujos de automatización inteligente.',
+        resultado: 'Podrás diseñar y desplegar agentes capaces de ejecutar tareas complejas en piloto automático: leer emails, buscar en la web, actualizar CRMs y generar reportes sin intervención humana.',
+        handsOn: [
+          'Agente que monitorea mencionas de tu marca en redes y resume tendencias',
+          'Workflow que clasifica leads de formularios y los agrega a Notion',
+          'Asistente de soporte que responde tickets en Gmail con contexto de base de conocimiento'
+        ],
+        requisitos: 'Sin programación. Solo manejo básico de computadora.',
+        horas: 12
+      },
+      promptEngineering: {
+        title: 'Prompt Engineering',
+        sumilla: 'Técnicas avanzadas para comunicarte con modelos de IA y obtener resultados consistentes y de calidad profesional: chain-of-thought, few-shot, role prompting, structured output y evaluación sistemática.',
+        resultado: 'Podrás diseñar prompts reutilizables y testeables para cualquier caso de uso, reducir alucinaciones, estructurar salidas en JSON y construir un library de prompts para tu equipo.',
+        handsOn: [
+          'Library de prompts para generación de contenido de marketing',
+          'Sistema de evaluación automática de calidad de respuestas LLM',
+          'Prompt system para agente de atención al cliente con restricciones de tono'
+        ],
+        requisitos: 'Sin requisitos técnicos. Tener acceso a ChatGPT o Claude.',
+        horas: 8
+      },
+      iaNegocios: {
+        title: 'IA para Negocios',
+        sumilla: 'Taller estratégico para líderes y profesionales no técnicos. Aprende a identificar casos de uso de IA en tu industria, evaluar herramientas, estimar costos y liderar proyectos de adopción de IA en tu organización.',
+        resultado: 'Podrás elaborar un mapa de oportunidades de IA para tu empresa, presentar un business case con ROI estimado y gestionar la implementación de una herramienta de IA con tu equipo.',
+        handsOn: [
+          'Mapa de procesos automatizables con IA en tu empresa actual',
+          'Análisis comparativo de 3 herramientas de IA para un caso real',
+          'Presentación de business case con métricas de adopción y ROI'
+        ],
+        requisitos: 'Sin requisitos técnicos. Útil tener experiencia en gestión de equipos.',
+        horas: 8
+      },
+      computerVision: {
+        title: 'Computer Vision',
+        sumilla: 'Taller práctico de visión por computadora con Python: procesamiento de imágenes con OpenCV, detección de objetos con YOLO, clasificación con redes convolucionales y análisis de video en tiempo real.',
+        resultado: 'Podrás construir pipelines de procesamiento de imágenes, entrenar detectores de objetos custom y desplegar modelos de visión en aplicaciones web o dispositivos edge.',
+        handsOn: [
+          'Detector de aforo en tiempo real usando YOLO y cámara web',
+          'Clasificador de defectos en productos manufacturados (quality control)',
+          'App web que analiza imágenes subidas por el usuario con modelo custom'
+        ],
+        requisitos: 'Python básico recomendado. Se proveen entornos en Google Colab.',
+        horas: 14
+      }
+    };
+
+    // ── Modal ──────────────────────────────────────────────────────
+    function openSyllabus(key) {
+      const d = syllabusData[key];
+      if (!d) return;
+      document.getElementById('modal-title').textContent = d.title;
+      document.getElementById('modal-sumilla').textContent = d.sumilla;
+      document.getElementById('modal-resultado').textContent = d.resultado;
+      document.getElementById('modal-horas').textContent = d.horas;
+      document.getElementById('modal-requisitos').textContent = d.requisitos;
+      const ul = document.getElementById('modal-handson');
+      ul.innerHTML = d.handsOn.map(p =>
+        `<li class="flex items-start gap-2 text-white/70 text-sm">
+           <i data-lucide="check-circle" class="w-4 h-4 text-brand-500 flex-shrink-0 mt-0.5"></i>${p}
+         </li>`
+      ).join('');
+      const overlay = document.getElementById('modal-overlay');
+      overlay.classList.remove('hidden');
+      overlay.classList.add('flex');
+      lucide.createIcons();
+    }
+
+    function closeSyllabus() {
+      const overlay = document.getElementById('modal-overlay');
+      overlay.classList.add('hidden');
+      overlay.classList.remove('flex');
+    }
+
+    document.getElementById('modal-overlay').addEventListener('click', function(e) {
+      if (e.target === this) closeSyllabus();
+    });
+
+    // ── Init Lucide ────────────────────────────────────────────────
+    lucide.createIcons();
+  </script>
+</body>
+</html>
